@@ -1,4 +1,24 @@
-import processing.video.*;
+package processing.test.webcam;
+
+import processing.core.*; 
+import processing.data.*; 
+import processing.event.*; 
+import processing.opengl.*; 
+
+import processing.video.*; 
+
+import java.util.HashMap; 
+import java.util.ArrayList; 
+import java.io.File; 
+import java.io.BufferedReader; 
+import java.io.PrintWriter; 
+import java.io.InputStream; 
+import java.io.OutputStream; 
+import java.io.IOException; 
+
+public class webcam extends PApplet {
+
+
 Capture video;
 int width = 960;
 int height = 720;
@@ -17,17 +37,17 @@ String c1, c2, c3, c4, c5, c6, c7, c8;
        
 
 
-void setup() {
+public void setup() {
   //fullScreen();
   //noStroke();
   //fill(0);
-  size(925,695);
+  
   video = new Capture(this,vwidth,vheight,30);
   video.start();
  
 }
 
-void mousePressed() {
+public void mousePressed() {
   //image(video, 0, 0);
   //saveFrame("data/img1.jpg"); 
 
@@ -62,11 +82,11 @@ void mousePressed() {
 }
 
 
-void captureEvent(Capture video) {
+public void captureEvent(Capture video) {
   video.read();
 }
 
-void extractColor(PImage img) {
+public void extractColor(PImage img) {
   int white = 0; 
   int black = 0;
   int red = 0;
@@ -122,7 +142,7 @@ void extractColor(PImage img) {
   
 }
 
-void draw() {
+public void draw() {
   //if(video.available()){
   //  video.read();
   //}
@@ -190,4 +210,14 @@ void draw() {
   
   
   
+}
+  public void settings() {  size(925,695); }
+  static public void main(String[] passedArgs) {
+    String[] appletArgs = new String[] { "webcam" };
+    if (passedArgs != null) {
+      PApplet.main(concat(appletArgs, passedArgs));
+    } else {
+      PApplet.main(appletArgs);
+    }
+  }
 }
