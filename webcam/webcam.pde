@@ -1,10 +1,10 @@
 import processing.video.*;
 Capture video;
-int width = 960;
+int width = 720;
 int height = 720;
 
-int vwidth = 320;
-int vheight = 240;
+int vwidth = 280;
+int vheight = 200;
 int counter = 0;
 
 
@@ -127,39 +127,39 @@ void draw() {
   background(255);
   
   if(counter == 0) {
-    image(video, 0, 0);
+    image(video, 20, 20);
   }
   if(counter >= 1){
-    image(frame, 0, 0); 
-    image(video, 320,0);
+    image(frame, 20, 20); 
+    image(video, 320,20);
   }
   if(counter >= 2){
-    image(frame2, 320,0);
-    image(video, 640,0);
+    image(frame2, 320,20);
+    image(video, 620,20);
   }
   if(counter >= 3){
-    image(frame3, 640,0);
-    image(video, 0,240);
+    image(frame3, 620,20);
+    image(video, 20,240);
   }
   if(counter >= 4){
-    image(frame4, 0,240);
+    image(frame4, 20,240);
     image(video, 320,240);
   }
   if(counter >= 5){
     image(frame5, 320,240);
-    image(video, 640,240);
+    image(video, 620,240);
   }
   if(counter >= 6){
-    image(frame6, 640,240);
-    image(video, 0,480);
+    image(frame6, 620,240);
+    image(video, 20,480);
   }
   if(counter >= 7){
-    image(frame7, 0,480);
+    image(frame7, 20,480);
     image(video, 320,480);
   }
   if(counter >= 8){
     image(frame8, 320,480);
-    image(video, 640,480);
+    image(video, 620,480);
   }
   
   if(counter >= 9){
