@@ -10,6 +10,7 @@ int vheight = 240;
 int counter = 0;
 boolean play = false;
 int timer = 0;
+int x = 0;
 
 
 
@@ -322,7 +323,21 @@ void draw() {
     if(timer > 900 && timer < 1000)  {  image(frame9, 670,510);  filter(GRAY);}
     if(timer == 900)  {playColors(c9);}
     
-    if(timer == 1200) {counter = 0;}
+    if(timer >= 1200) {
+      
+      textSize(16);
+      text("      a      n      C      l         s ", 50, 50+x*.01);
+      text("   e    r      g              o        ", 50, 50+x*.02);
+      text("H          i            o        r       ", 50, 50+x*.01);
+      fill(250,250,250);
+      fill(x++,2*x++,x+=.5);
+      
+      if(timer >= 1650) {
+        counter = 0;
+        timer = 0;
+        x = 0;
+      }
+    }
   }
   
 }
